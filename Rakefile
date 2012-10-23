@@ -1,3 +1,5 @@
+require 'rake'
+
 desc 'Run tests'
 task :test do
   Dir.glob('**/*_test.rb').each do |test_file|

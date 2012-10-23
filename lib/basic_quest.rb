@@ -1,6 +1,5 @@
 # BasicQuest
 # Usage: ruby basic_quest.rb
-raise "BasicQuest requires ruby 1.9.3" if RUBY_VERSION < "1.9.3"
 
 require 'basic_quest/config_loader'
 require 'basic_quest/game'

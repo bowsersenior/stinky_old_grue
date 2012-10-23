@@ -1,5 +1,4 @@
-require 'tmf'
-include TMF
+#!/usr/bin/env ruby
 
 if RUBY_VERSION < "1.9.2"
   puts "BasicQuest works best with ruby 1.9.3 (detected #{RUBY_VERSION})"
@@ -7,3 +6,11 @@ if RUBY_VERSION < "1.9.2"
   require 'rubygems'
   require 'backports'
 end
+
+$:.push File.expand_path("../lib", __FILE__) unless $:.include?(
+  File.expand_path("../lib", __FILE__)
+)
+
+require 'basic_quest'
+
+BasicQuest.run

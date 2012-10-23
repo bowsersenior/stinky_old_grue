@@ -56,6 +56,11 @@ lambda do
       corridors = config[:map][g.current_room].select do |direction, room|
         !room.nil?
       end
+
+      if RUBY_VERSION < '1.9.2'
+        corridors = Hash[corridors] # ruby 1.8.7 compatibility
+      end
+
       direction = corridors.keys.sample
       next_room = corridors[direction]
 

@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-$:.push File.expand_path("../../lib", __FILE__) unless $:.include?(
-  File.expand_path("../../lib", __FILE__)
-)
-
-require 'basic_quest'
-
-BasicQuest.run
