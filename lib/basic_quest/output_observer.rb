@@ -1,5 +1,3 @@
-require "observer"
-
 module BasicQuest
   module OutputObserver
     MESSAGES = {
@@ -16,7 +14,7 @@ module BasicQuest
         "Went #{hsh[:last_direction]} to #{hsh[:current_room]} Room."
       },
       :take_a_rest => lambda { |hsh|
-        "Taking a rest on turn #{hsh[:turn]}"
+        "Taking a rest on turn #{hsh[:turn]}."
       },
       :done => lambda { |hsh|
         "Salutations! You reached the #{hsh[:teleport_room]} Room!"
@@ -24,14 +22,12 @@ module BasicQuest
     }
 
     def update(opts)
-      unless opts[:suppress_output]
-        template = MESSAGES[ opts[:last_action] ]
-        message  = template && template.call(opts)
+      template = MESSAGES[ opts[:last_action] ]
+      message  = template && template.call(opts)
 
-        if message
-          puts(message)
-          puts "\n"
-        end
+      if message
+        puts(message)
+        puts "\n"
       end
     end
 

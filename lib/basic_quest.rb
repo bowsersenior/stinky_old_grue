@@ -11,6 +11,7 @@ module BasicQuest
 
   def run(config_file='basic_quest.yml')
     config = ConfigLoader.load_yaml(config_file)
+    config[:start_room] = (config[:map].keys - [ config[:teleport_room] ]).sample
 
     g = Game.new(config)
     g.add_observer(OutputObserver)

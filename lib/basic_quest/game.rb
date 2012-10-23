@@ -1,4 +1,5 @@
 require "observer"
+require "basic_quest/args_helper"
 
 module BasicQuest
   class Game
@@ -14,13 +15,15 @@ module BasicQuest
                   :turn
 
     def initialize(opts)
+      BasicQuest::ArgsHelper.require!(opts, :map, :start_room, :teleport_room)
+
       self.map           = opts[:map]
+      self.current_room  = opts[:start_room]
       self.teleport_room = opts[:teleport_room]
-      self.turn          = 1
     end
 
     def start
-      self.current_room  = (self.map.keys - [self.teleport_room]).sample
+      self.turn = 1
       self.broadcast :started
     end
 
