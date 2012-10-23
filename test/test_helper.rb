@@ -1,0 +1,2 @@
+require 'tmf'
+include TMF

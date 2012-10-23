@@ -1,0 +1,48 @@
+---
+:teleport_room: Burnt Sienna
+:map:
+  Vermilion:
+    :N:
+    :E: Ochre
+    :S: Aquamarine
+    :W:
+  Ochre:
+    :N:
+    :E: Chartreuse
+    :S: Ochre
+    :W:
+  Chartreuse:
+    :N: Ochre
+    :E:
+    :S: Emerald
+    :W:
+  Emerald:
+    :N:
+    :E: Lavender
+    :S: Aquamarine
+    :W: Cobalt
+  Aquamarine:
+    :N:
+    :E:
+    :S: Violet
+    :W: Cobalt
+  Cobalt:
+    :N: Vermilion
+    :E:
+    :S: Burnt Sienna
+    :W: Vermilion
+  Violet:
+    :N:
+    :E: Burnt Sienna
+    :S: Burnt Sienna
+    :W: Chartreuse
+  Burnt Sienna:
+    :N: Emerald
+    :E: Lavender
+    :S:
+    :W:
+  Lavender:
+    :N:
+    :E: Chartreuse
+    :S:
+    :W: Burnt Sienna
