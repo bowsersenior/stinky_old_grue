@@ -7,8 +7,11 @@ require 'basic_quest/output_observer'
 require 'basic_quest/grue'
 
 module BasicQuest
+  DEFAULT_CONFIG_FILE_DIR = File.expand_path("../..", __FILE__)
+  DEFAULT_CONFIG_FILE     = File.join(DEFAULT_CONFIG_FILE_DIR, 'basic_quest.yml')
+  
   # a big ugly method that controls the game flow
-  def run(config_file='basic_quest.yml')
+  def run(config_file=DEFAULT_CONFIG_FILE)
     config = ConfigLoader.load_yaml(config_file)
     config[:start_room] = (config[:map].keys - [ config[:teleport_room] ]).sample
 
